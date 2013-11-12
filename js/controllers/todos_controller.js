@@ -1,4 +1,12 @@
 Todos.TodosController = Ember.ArrayController.extend({
+
+  titleChanged: function(){
+    var remaining = this.get('remaining');
+    var remaining_for_title = function(){ return remaining ? '(' + remaining + ')' : ''};
+
+    document.title = remaining_for_title() + ' Ember.js • TodoMVC';
+  }.observes('remaining').on('init'),
+
   remaining: function(){
     return this.filterBy('isCompleted', false).get('length'); // this == TodosController
   }.property('@each.isCompleted'),
