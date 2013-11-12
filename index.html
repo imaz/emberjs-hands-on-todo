@@ -5,6 +5,7 @@
     <title>Ember.js • TodoMVC</title>
     <link rel='stylesheet' href='style.css'>
   </head>
+
   <body>
     <script type='text/x-handlebars' data-template-name='todos/index'>
       <ul id='todo-list'>
@@ -22,7 +23,17 @@
       </ul>
     </script>
 
+    <script type='text/x-handlebars' data-template-name='todos/training'>
+      <section id='todoapp'>
+        <h1>render の練習</h1>
+        {{edit-todo class='edit' placeholder='ここへきてはじめての render!!' value=message}}
+        <p>controller を継承したので未消化件数もわかるよ {{message}}</span>
+      </section>
+    </script>
+
     <script type='text/x-handlebars' data-template-name='todos'>
+      {{render 'todos/training' model}}
+
       <section id='todoapp'>
         <header id='header'>
           <h1>todos</h1>
@@ -76,6 +87,7 @@
     <script src='js/models/todo.js'></script>
     <script src='js/controllers/todo_controller.js'></script>
     <script src='js/controllers/todos_controller.js'></script>
+    <script src='js/controllers/todos_training_controller.js'></script>
     <script src='js/views/edit_todo_view.js'></script>
   </body>
 </html>
