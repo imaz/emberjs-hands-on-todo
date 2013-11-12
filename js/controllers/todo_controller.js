@@ -16,6 +16,13 @@ Todos.TodoController = Ember.ObjectController.extend({
       } else {
         this.get('model').save();
       }
+    },
+    editTimeLimit: function(){
+      this.set('isTimeLimitEditing', true);
+    },
+    acceptTimeLimitChanges: function(){
+      this.set('isTimeLimitEditing', false);
+      this.get('model').save();
     }
   },
   isEditing: false,

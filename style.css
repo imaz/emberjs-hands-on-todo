@@ -185,6 +185,20 @@ label[for='toggle-all'] {
 	border-bottom: 1px dotted #ccc;
 }
 
+#todo-list li .date {
+  position: absolute;
+  left: -90px;
+  width: 90px;
+  height: 30px;
+  line-height: 30px;
+  font-size: 16px;
+  border-top: 1px dotted #adadad;
+}
+
+#todo-list li .edit-date {
+  width: 80px;
+}
+
 #todo-list li:last-child {
 	border-bottom: none;
 }
